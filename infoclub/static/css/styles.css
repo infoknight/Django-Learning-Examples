@@ -1,0 +1,17 @@
+body {
+	background-image : url("../images/background_floral.jpeg");
+	background-color : gray;
+}
+
+h1 {
+	text-align : center;
+	color : blue;
+}
+
+table {
+	margin : auto;
+}
+
+th, td{
+	color : #0750b5;
+}

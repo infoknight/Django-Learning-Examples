@@ -1,0 +1,38 @@
+body {
+	background-image : url("../images/background_cyber.jpg");
+	background-color : gray;
+}
+
+/*
+ * .bg-cover {
+	background-image : url("../images/background_cyber.jpg");
+	color		 : white;
+	background-size  : cover;
+	background-position : center center;
+	position         : relative;
+	z-index          : -2;
+}*/
+
+h1, h2 {
+	text-align : center;
+	color : blue;
+}
+
+h3 {
+	text-align : center;
+	color : #0750b5;
+}
+
+h4 {
+	text-align : center;
+	color : red;
+}
+
+table {
+	margin : auto;
+}
+
+th, td{
+	color : #0750b5;
+}
+

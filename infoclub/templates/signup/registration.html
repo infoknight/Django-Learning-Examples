@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>Registration Form</title>
+		<link rel="stylesheet" href="{% static "css/styles.css" %}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+				<h1>User Registration Form</h1>
+				<form method="POST">
+					{{ call_form.as_p }}	<!-- Connection from view.py -->
+				    {% csrf_token %}
+				    <input type="submit" class="btn btn-primary" value="Signup">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

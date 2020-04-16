@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+	<head>
+		<title>Data Sheet</title>
+		<link rel="stylesheet" href="{% static "css/styles.css" %}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+			    <div class="header">	
+				<h1>InfoClub Registered Customers Data</h1>
+				{{ insert_me }}
+			    </div>
+
+			    <div class="datatable">
+				{% if signup %}
+				<table>
+					<thead>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+					</thead>
+
+					{% for item in signup %}
+					<tr>
+						<td>{{ item.first_name }}</td>
+						<td>{{ item.last_name }}</td>
+						<td>{{ item.email }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+				{% else %}
+					<p>No User Registration Data Found</p>
+				{% endif %}
+			    </div>
+				<!--img src="{% static "/images/background_floral.jpeg" %}" alt="Image Not Found"/-->
+			</div>
+		</div>
+	</body>
+</html>
