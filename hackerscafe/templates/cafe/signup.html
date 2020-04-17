@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-{% load static %}
+{% extends "cafe/base-template.html" %}
+	{% block title_block %}
+		<title>Hackers' Cafe</title>
+	{% endblock %}
 
-<html>
-	<head>
-		<title>Sign Up Here</title>
-		<link rel="stylesheet" href="{% static "css/styles.css" %}">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
-	</head>	
-
-	<body>
+	{% block body_block %}
+	<h3>Want to better understand how technologies work? Sign up here </h3>
 		<div class="container">
-			<div class="jumbotron">
-				<h3>Want to better understand how technologies work? Sign up here </h3>
-				<div class="container">
-				<div class="jumbotron bg-cover">
-					<form method="POST">
-						{{ call_form.as_p }}
-						{% csrf_token %}
-						<input type="submit" class="btn btn-primary" value="Submit"/>
-					</form>
-				</div>
-				</div>
-			</div>
+		<div class="jumbotron bg-cover">
+			<form method="POST">
+				{{ call_form.as_p }}
+				{% csrf_token %}
+				<input type="submit" class="btn btn-primary" value="Submit"/>
+			</form>
 		</div>
-	</body>
-</html>
+		</div>
+	{% endblock %}
+
+
 

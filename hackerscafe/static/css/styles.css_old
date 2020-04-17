@@ -30,24 +30,9 @@ h4 {
 
 table {
 	margin : auto;
-  	border-collapse: collapse;
-  	width: 100%;
 }
 
-thead, th {
-  	border: 1px solid #dddddd;
+th, td{
 	color : #0750b5;
-  	text-align: center;
-  	padding: 8px;
 }
 
-td {
-  	border: 1px solid #dddddd;
-	color : #0750b5;
-  	text-align: left;
-  	padding: 8px;
-}
-
-tr:nth-child(even) {
-  	background-color: #cce0f0;
-}

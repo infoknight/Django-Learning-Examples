@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-{% load static %}
-
-<html>
-	<head>
-		<title>Members List</title>
-		<link rel="stylesheet" href="{% static "css/styles.css" %}">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
-	</head>	
-
-	<body>
-		<div class="container">
-		<div class="jumbotron">
-			<h2>Registered Members of Hackers' Den</h2>
-			<h4>Please respect others privacy</h4>
+{% extends "cafe/base-template.html" %}
+	{% block title_block %}
+	<title>Members List</title>
+	{% endblock %}
+			
+	{% block body_block %}
+		<h2>Registered Members of Hackers' Den</h2>
+		<h4>Please respect others privacy</h4>
 			<div class="datatable">
 				{% if members %}
 				<table>
@@ -33,8 +27,6 @@
 					<p>No Registered Members Found</p>
 				{% endif %}
 			</div>
-		</div>
-		</div>
-	</body>
-</html>
+	{% endblock %}
+
 

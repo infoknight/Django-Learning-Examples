@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-{% load static %}
+{% extends "cafe/base-template.html" %}
 
-<html>
-	<head>
-		<title>Hackers' Den</title>
-		<link rel="stylesheet" href="{% static "css/styles.css" %}">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
-	</head>	
+	{% block title_block %}
+		<title>Hackers' Cafe</title>
+	{% endblock %}
 
-	<body>
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Hackers' Den : This is where knowledge flows!......</h1>
-				<p>Hackers are not cyber criminals. Hackers make technology secure and world a safer place to live......</p>
-				{{ insert_me }}
-			</div>
-		</div>
-	</body>
-</html>
+	{% block body_block %}
+		<h1>Hackers'Cafe : This is where knowledge flows!......</h1>
+		<p>Hackers are not cyber criminals. Hackers make technology secure and world a safer place to live......</p>
+		{{ insert_me }}
+	{% endblock %}`
 
