@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-{% load static %}
+{% extends 'signup/base-template.html' %}
 
-<html>
-	<head>
+	{% block head_block %}
 		<title>Data Sheet</title>
-		<link rel="stylesheet" href="{% static "css/styles.css" %}">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	</head>
+	{% endblock %}
 
-	<body>
-		<div class="container">
-			<div class="jumbotron">
-			    <div class="header">	
-				<h1>InfoClub Registered Customers Data</h1>
-				{{ insert_me }}
-			    </div>
+	{% block body_block %}
 
-			    <div class="datatable">
-				{% if signup %}
+		<div>
+			<h1>InfoClub Registered Customers Data</h1>
+			{{ insert_me }}
+		</div>
+
+		<div class="datatable">
+			{% if signup %}  <!-- signup Tag called from views.py -->
 				<table>
 					<thead>
 						<th>First Name</th>
@@ -36,9 +32,5 @@
 				{% else %}
 					<p>No User Registration Data Found</p>
 				{% endif %}
-			    </div>
-				<!--img src="{% static "/images/background_floral.jpeg" %}" alt="Image Not Found"/-->
-			</div>
 		</div>
-	</body>
-</html>
+	{% endblock %}

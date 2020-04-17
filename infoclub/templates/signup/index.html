@@ -1,20 +1,12 @@
 <!DOCTYPE html>
+{% extends 'signup/base-template.html' %}
 {% load static %}
 
-<html>
-	<head>
+	{% block head_block %}
 		<title>InfoClub Inc</title>
-		<link rel="stylesheet" href="{% static "css/styles.css" %}">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	</head>
+	{% endblock %}
 
-	<body>
-		<div class="container">
-			<div class="jumbotron">
-				<h1>InfoClub Welcomes You</h1>
-				{{ insert_me }}
-				<!--img src="{% static "/images/background_floral.jpeg" %}" alt="Image Not Found"/-->
-			</div>
-		</div>
-	</body>
-</html>
+	{% block body_block %}
+		<h1>InfoClub Welcomes You</h1>
+		{{ insert_me }}
+	{% endblock %}
