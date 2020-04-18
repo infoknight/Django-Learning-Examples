@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "base-template.html" %}
+
+	{% block title_block %}
+		<title>Registration Form</title>
+	{% endblock %}
+
+	{% block body_block %}
+	<div class="jumbotron">
+		{% if registered %}
+			<h1>Thank you for registering!</h1>
+		{% else %}
+			<h3>Wait till Admin approves your request for registration</h3>
+				<form method="POST">
+					{{ user_form.as_p }}
+					{% csrf_token %}
+					<input type="submit" class="btn btn-primary" value="Register"/>
+				</form>
+		{% endif %}
+	</div>
+	{% endblock %}
+
+
+

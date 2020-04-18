@@ -1,0 +1,53 @@
+body {
+	background-image : url("../images/background_cyber.jpg");
+	background-color : gray;
+}
+
+/*
+ * .bg-cover {
+	background-image : url("../images/background_cyber.jpg");
+	color		 : white;
+	background-size  : cover;
+	background-position : center center;
+	position         : relative;
+	z-index          : -2;
+}*/
+
+h1, h2 {
+	text-align : center;
+	color : blue;
+}
+
+h3 {
+	text-align : center;
+	color : #0750b5;
+}
+
+h4 {
+	text-align : center;
+	color : red;
+}
+
+table {
+	margin : auto;
+  	border-collapse: collapse;
+  	width: 100%;
+}
+
+thead, th {
+  	border: 1px solid #dddddd;
+	color : #0750b5;
+  	text-align: center;
+  	padding: 8px;
+}
+
+td {
+  	border: 1px solid #dddddd;
+	color : #0750b5;
+  	text-align: left;
+  	padding: 8px;
+}
+
+tr:nth-child(even) {
+  	background-color: #cce0f0;
+}
