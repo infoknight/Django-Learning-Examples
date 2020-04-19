@@ -10,6 +10,11 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ('username', 'email', 'password')
 
+class uploadArtifactsForm(forms.ModelForm):
+    class Meta():
+        model = UserProfileInfoModel
+        fields = ('artifacts',)
+
 class registrationForm(forms.ModelForm):
     first_name = forms.CharField()
     last_name  = forms.CharField()

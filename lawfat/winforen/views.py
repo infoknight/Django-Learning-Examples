@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from winforen.forms import registrationForm, UserForm
+from winforen.forms import registrationForm, UserForm, uploadAtrifactsForm
 from winforen.models import registrationModel
 #Login 
 from django.urls import reverse
@@ -19,6 +19,19 @@ def user_logout(request):           #Logout the already loggedin user; use decor
 @login_required
 def special(request):          #Special page for only the loggedin users
     return HttpResponse("Congratulations! : You have successfully loggedin!")
+
+@login_required
+def uploadArtifact(request):
+    if request.method == "POST":
+        artifact_form = uploadArtifactsForm(data=request.POST)
+
+        if artifact_form.is_valid():
+            artifact_upload = artifact_form.save(commit=False)
+            if 'artifact' in request.FILES:
+                artifact_upload.artifact = request.FILES['artifact']
+            artifact_upload.save()
+    return render(request, "upload_artifacts_form.html", {'artifact_form':artifact_form}) 
+
 
 def register(request):
 

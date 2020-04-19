@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 {% extends "cafe/base-template.html" %}
+
 	{% block title_block %}
-		<title>Hackers' Cafe</title>
+		<title>Sign-Up Form</title>
 	{% endblock %}
 
 	{% block body_block %}
-	<h3>Want to better understand how technologies work? Sign up here </h3>
-		<div class="container">
-		<div class="jumbotron bg-cover">
-			<form method="POST">
-				{{ call_form.as_p }}
-				{% csrf_token %}
-				<input type="submit" class="btn btn-primary" value="Submit"/>
-			</form>
-		</div>
-		</div>
+	<div class="jumbotron">
+		{% if registered %}
+			<h1>Thank you for registering!</h1>
+		{% else %}
+			<h3>Want to better understand how technologies work? Sign up here </h3>
+				<form enctype="multipart/form-data" method="POST">
+					{{ user_form.as_p }}
+					{{ profile_form.as_p }}
+					{% csrf_token %}
+					<input type="submit" class="btn btn-primary" value="Sign Up"/>
+				</form>
+		{% endif %}
+	</div>
 	{% endblock %}
 
 

@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class UserProfileInfoModel(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
+    
+    artifacts = models.ImageField(upload_to = "artifacts", blank = True)
 
     def __str__(self):
         return self.user.username

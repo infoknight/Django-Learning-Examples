@@ -29,10 +29,22 @@
       				<li class="nav-item">
 					<a class="nav-link" href="{% url 'cafe:signup' %}">Signup</a>
       				</li>
+    			    	
+				<!--Show links only if the user is authenticated -->
+				{% if user.is_authenticated %}
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'cafe:user_login' %}">Login</a>
+					</li>
+				{% endif %}
+
       				<li class="nav-item">
         				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       				</li>
-    			    </ul>
+			    </ul>
     			    <form class="form-inline my-2 my-lg-0">
       				<input class="form-control mr-sm-2" type="search" placeholder="Search">
       				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

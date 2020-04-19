@@ -22,6 +22,8 @@ urlpatterns = [
     re_path('^$', views.index, name="index"),
     path('admin/', admin.site.urls),
     re_path('^cafe/', include('cafe.urls')),
+    re_path('^logout/$', views.user_logout, name="logout"),
+    re_path('^special/', views.special, name="special"),        #Redirect the loggedin user to the special page; @login_required
 ]
 
 '''
